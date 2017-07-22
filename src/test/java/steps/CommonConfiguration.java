@@ -86,7 +86,7 @@ public class CommonConfiguration {
         OS_platform=deviceType;
 
         //Mandatory fields
-        desiredCapabilities.setCapability("app", "/home/segfault/workspace/SampleAppium/app/quikr.apk");
+        desiredCapabilities.setCapability("app", "/tmp/test.apk");
         desiredCapabilities.setCapability("platformVersion", platformVersion);
         desiredCapabilities.setCapability("platformName",deviceType);
         desiredCapabilities.setCapability("deviceName",deviceType);
@@ -123,5 +123,7 @@ public class CommonConfiguration {
         WebDriverWait wait=new WebDriverWait(driver,time);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locatorValue)));
     }
+
+
 
 }

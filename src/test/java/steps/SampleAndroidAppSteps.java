@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -55,8 +56,16 @@ public class SampleAndroidAppSteps {
 
     @Then("^I see account picker with my email \"([^\"]*)\"$")
     public void i_see_account_picker_with_my_email(String arg1) throws Throwable {
+
+
+
         MobileElement el1 = (MobileElement) driver.findElementById("com.google.android.gms:id/account_name");
         System.out.println("the argument passed was "+arg1);
         Assert.assertTrue(el1.getText().contains(arg1));
+        TouchAction tAction= new TouchAction(driver);
+        tAction.press(el1).perform();
+
+
     }
+
 }
